@@ -46,13 +46,13 @@ module fourToOneMux(s1,s2,a,b,c,d,y);
 input s1,s2,a,b,c,d;
 wire n1,n2,s,t,u,v;
 output y;
-not g1(n1,s1);
-not g2(n2,s2);
-and g3(s,n1,n2,a);
-and g4(t,n1,s2,b);
-and g5(u,s1,n2,c);
-and g6(v,s1,s2,d);
-or g7(y,s,t,u,v);
+    not g1(n1,s1);
+    not g2(n2,s2);
+    and g3(s,n1,n2,a);
+    and g4(t,n1,s2,b);
+    and g5(u,s1,n2,c);
+    and g6(v,s1,s2,d);
+    or g7(y,s,t,u,v);
 endmodule
 ```
 **4:1 MUX Data Flow Implementation:**
@@ -75,12 +75,12 @@ input s1,s2,a,b,c,d;
 output reg y;
 always @(*) begin
     case ({s1,s2})
-    2'b00: y=a;
-    2'b01: y=b;
-    2'b10: y=c;
-    2'b11: y=d;
-    default: y=0;
-    endcase
+        2'b00: y=a;
+        2'b01: y=b;
+        2'b10: y=c;
+        2'b11: y=d;
+        default: y=0;
+        endcase
     end
 endmodule
 
@@ -100,9 +100,9 @@ module four_one_mux_structural(a,s,y);
 input [3:0]a;input [1:0]s;
 wire u,v;
 output y ;
-two_one_mux m1 (.a(a[0]),.b(a[1]),.s(s[0]),.y(u));
-two_one_mux m2 (.a(a[2]),.b(a[3]),.s(s[0]),.y(v));
-two_one_mux m3 (.a(u),.b(v),.s(s[1]),.y(y));
+    two_one_mux m1 (.a(a[0]),.b(a[1]),.s(s[0]),.y(u));
+    two_one_mux m2 (.a(a[2]),.b(a[3]),.s(s[0]),.y(v));
+    two_one_mux m3 (.a(u),.b(v),.s(s[1]),.y(y));
 endmodule
 
 ```
@@ -117,34 +117,34 @@ fourToOneMux dut(.a(A),.b(B),.c(C),.d(D),.s1(S1),.s2(S2),.y(Y));
 
 initial
 begin
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b1;
-S1=1'b0;
-S2=1'b0;
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b1;
+    S1=1'b0;
+    S2=1'b0;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b1;
-S1=1'b0;
-S2=1'b1;
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b1;
+    S1=1'b0;
+    S2=1'b1;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b1;
-S1=1'b1;
-S2=1'b0;
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b1;
+    S1=1'b1;
+    S2=1'b0;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b1;
-S1=1'b1;
-S2=1'b1;
-end
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b1;
+    S1=1'b1;
+    S2=1'b1;
+    end
 endmodule
 
 ```
@@ -157,34 +157,34 @@ wire Y;
 four_one_mux_dataflow dut(.a(A),.b(B),.c(C),.d(D),.s1(S1),.s2(S2),.y(Y));
 initial
 begin
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b0;
-S1=1'b0;
-S2=1'b0;
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b0;
+    S1=1'b0;
+    S2=1'b0;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b0;
-S1=1'b0;
-S2=1'b1;
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b0;
+    S1=1'b0;
+    S2=1'b1;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b0;
-S1=1'b1;
-S2=1'b0;
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b0;
+    S1=1'b1;
+    S2=1'b0;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b1;
-D=1'b0;
-S1=1'b1;
-S2=1'b1;
-end
+    A=1'b0;
+    B=1'b1;
+    C=1'b1;
+    D=1'b0;
+    S1=1'b1;
+    S2=1'b1;
+    end
 endmodule
 
 ```
@@ -197,34 +197,34 @@ wire Y;
 four_one_mux_behaviour dut(.a(A),.b(B),.c(C),.d(D),.s1(S1),.s2(S2),.y(Y));
 initial
 begin
-A=1'b0;
-B=1'b1;
-C=1'b0;
-D=1'b1;
-S1=1'b0;
-S2=1'b0;
+    A=1'b0;
+    B=1'b1;
+    C=1'b0;
+    D=1'b1;
+    S1=1'b0;
+    S2=1'b0;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b0;
-D=1'b1;
-S1=1'b0;
-S2=1'b1;
+    A=1'b0;
+    B=1'b1;
+    C=1'b0;
+    D=1'b1;
+    S1=1'b0;
+    S2=1'b1;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b0;
-D=1'b1;
-S1=1'b1;
-S2=1'b0;
+    A=1'b0;
+    B=1'b1;
+    C=1'b0;
+    D=1'b1;
+    S1=1'b1;
+    S2=1'b0;
 #100
-A=1'b0;
-B=1'b1;
-C=1'b0;
-D=1'b1;
-S1=1'b1;
-S2=1'b1;
-end
+    A=1'b0;
+    B=1'b1;
+    C=1'b0;
+    D=1'b1;
+    S1=1'b1;
+    S2=1'b1;
+    end
 endmodule
 
 ```
@@ -239,21 +239,20 @@ wire Y;
 four_one_mux_structural dut(.a(A),.s(S),.y(Y));
 
 initial 
-begin
+    begin
 
-A = 4'b0110;
-S = 2'b00;
+    A = 4'b0110;
+    S = 2'b00;
 #100;
-A = 4'b0110;
-S = 2'b01;
+    A = 4'b0110;
+    S = 2'b01;
 #100;
-A = 4'b0110;
-S = 2'b10;
+    A = 4'b0110;
+    S = 2'b10;
 #100;
-A = 4'b0110;
-S = 2'b11;
-#100;
-end
+    A = 4'b0110;
+    S = 2'b11;
+    end
 endmodule
 
 
