@@ -288,12 +288,14 @@ Time=18 | s[1]=0 s[0]=0 | Inputs: a[0]=1 a[1]=1 a[2]=1 a[3]=1
 
 
 <br>
+
 **Output waveform dataflow level** <br>
 <br>
 <img width="1918" height="1076" alt="image" src="https://github.com/user-attachments/assets/80781430-60ff-46db-aae3-d92ae18030bf" />
 
 
 <br>
+
 **Output waveform behaviour level** <br>
 <br>
 <img width="1918" height="1076" alt="image" src="https://github.com/user-attachments/assets/a195fa56-2bc2-4cf6-bbac-32412e293737" />
@@ -301,6 +303,7 @@ Time=18 | s[1]=0 s[0]=0 | Inputs: a[0]=1 a[1]=1 a[2]=1 a[3]=1
 
 
 <br>
+
 **Output waveform structural level** <br>
 <br>
 <img width="1919" height="1076" alt="image" src="https://github.com/user-attachments/assets/16f8ec1d-2f11-44d9-b1cb-aef9cd8664c2" />
